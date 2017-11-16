@@ -256,7 +256,7 @@ int main(void) {
                 }
                 
             }
-            
+            /*
             if(edge_num == 0)
                 continue;
             
@@ -264,9 +264,9 @@ int main(void) {
                 std::cerr << "Error:Invalid vertex index\n";
             
             else{
-                
+                */
                 GenerateVertexCover(edge_num, vertex_num, sconstrain_num, tconstrain_num, edge);
-            }
+           // }
         }
     }
     // at this point the solver is ready. You must create new variable and new clauses
