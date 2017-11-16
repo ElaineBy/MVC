@@ -93,8 +93,8 @@ void GenerateVertexCover(unsigned edge_num, unsigned vertex_num, unsigned sconst
             }
         }
         
-        //sconstrain_num = vertex_num*Combination(middle,2);
-        //tconstrain_num = middle * Combination(vertex_num,2);
+        sconstrain_num = vertex_num*Combination(middle,2);
+        tconstrain_num = middle * Combination(vertex_num,2);
         
         
         for(unsigned i = 0; i < number; i++){
@@ -114,7 +114,7 @@ void GenerateVertexCover(unsigned edge_num, unsigned vertex_num, unsigned sconst
         }
         
         unsigned second_count = 0;
-        Minisat::vec<Minisat::Lit> second_constrain[500];
+        Minisat::vec<Minisat::Lit> second_constrain[sconstrain_num];
         for(unsigned c = 0; c < vertex_num; c ++){
             for(unsigned b = 0; b < middle-1; b++){
                 for(unsigned a = b+1 ; a < middle; a++){
@@ -127,7 +127,7 @@ void GenerateVertexCover(unsigned edge_num, unsigned vertex_num, unsigned sconst
         }
         
         unsigned third_count = 0;
-        Minisat::vec<Minisat::Lit> third_constrain[500];
+        Minisat::vec<Minisat::Lit> third_constrain[tconstrain_num];
         for(unsigned c = 0; c < middle; c ++){
             for(unsigned b = 0; b < vertex_num - 1; b++){
                 for(unsigned a = b+1 ; a < vertex_num; a++){
